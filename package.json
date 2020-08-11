@@ -1,0 +1,19 @@
+{
+  "name": "weather-app-js",
+  "version": "1.0.0",
+  "description": "Weather app with data from open weather api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elbie-em/Weather-App-JS.git"
+  },
+  "author": "Elbie Moonga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elbie-em/Weather-App-JS/issues"
+  },
+  "homepage": "https://github.com/Elbie-em/Weather-App-JS#readme"
+}
