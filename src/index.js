@@ -8,4 +8,7 @@ const fetchUrl = (location,apiKey) => {
 	return webUrl;
 }
 
-
+const getWeatherData = (location) => {
+	const apiKey = fetchApiKey();
+	const webUrl = fetchUrl(location,apiKey);
+}
