@@ -9,6 +9,7 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/css/styles.css">
   <!---SCRIPTS-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -23,18 +24,20 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light bg-dark d-flex flex-row justify-content-between">
+  <nav class="navbar navbar-light bg-dark d-flex flex-row justify-content-between op-level">
     <div>
       <a class="navbar-brand text-white" href="#">Weather Forcast</a>
     </div>
-    <div class="text-white">
-      <i class="fas fa-sun fa-2x"></i>&nbsp;
-      <i class="fas fa-share-alt fa-2x"></i>&nbsp;
-      &nbsp;<i class="fas fa-thumbs-up fa-2x"></i>
+    <div class="text-white w-25 d-flex flex-row justify-content-between">
+      <i class="fas fa-sun fa-2x"></i>
+      <i class="fas fa-share-alt fa-2x"></i>
+      <i class="fas fa-thumbs-up fa-2x"></i>
     </div>
-    <div class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Enter City" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="button">Go!</button>
+    <div class="input-group w-25">
+      <input type="text" class="form-control" placeholder="Enter City" aria-label="search" aria-describedby="btn-search">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="btn-search"><i class="fas fa-search"></i></button>
+      </div>
     </div>
   </nav>
 </body>
