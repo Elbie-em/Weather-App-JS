@@ -3,4 +3,9 @@ const fetchApiKey = () => {
 	return apiKey;
 }
 
+const fetchUrl = (location,apiKey) => {
+	let webUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${apiKey}`;
+	return webUrl;
+}
+
 
