@@ -8,7 +8,14 @@ const fetchUrl = (location,apiKey) => {
 	return webUrl;
 }
 
-const getWeatherData = (location) => {
+const getWeatherData = async (location) => {
 	const apiKey = fetchApiKey();
 	const webUrl = fetchUrl(location,apiKey);
+
+	const response = await fetch(webUrl,{mode: 'cors'});
+	const weatherData = await response.json();
+	
+	return weatherData;
 }
+
+
