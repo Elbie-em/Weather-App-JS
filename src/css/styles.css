@@ -20,6 +20,11 @@ html, body {
   opacity: 0.8;
 }
 
+.hov {
+  font-size: 30px;
+  padding: 5px;
+}
+
 .hov:hover {
   cursor: pointer;
   animation: zoom-unit;

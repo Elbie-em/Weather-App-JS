@@ -30,12 +30,15 @@ const dataCard = (container,data) => {
 
 	const unitCont = document.createElement('div');
 	unitCont.className = 'p-3 w-25 text-left';
-	const celcius = document.createElement('h5');
+	const celcius = document.createElement('span');
+	celcius.id = 'cel';
 	celcius.className = 'mt-3 hov';
-	celcius.innerText = 'C';
+	celcius.classList.add('border','border-success','rounded','bg-success');
+	celcius.innerHTML = 'C <br>';
 	celcius.onclick = () => { displayCelcius(data.main.temp,data.main.feels_like);}
 
-	const fahrenheit = document.createElement('h5');
+	const fahrenheit = document.createElement('span');
+	fahrenheit.id = 'fah';
 	fahrenheit.className = 'mt-3 hov';
 	fahrenheit.innerText = 'F';
 	fahrenheit.onclick = () => { displayFahrenhiet(data.main.temp,data.main.feels_like);}
@@ -115,20 +118,27 @@ const convertTemp = (temp) => {
 }
 
 const displayFahrenhiet = (temp,extraTemp) => {
+	const grF = document.getElementById('fah');
+	const grC = document.getElementById('cel');
 	const unitLabel = document.getElementById('temperature');
 	const extraLabel = document.getElementById('extraTemp');
 	const unit = convertTemp(temp);
 	const extraUnit = convertTemp(extraTemp)
 	unitLabel.innerText = `${unit} °`;
 	extraLabel.innerText = `Feels like ${extraUnit}°F`;
+	grF.classList.add('border','border-success','rounded','bg-success');
+	grC.classList.remove('border','border-success','rounded','bg-success');
 }
 
 const displayCelcius = (unit,extraUnit) => {
+	const grF = document.getElementById('fah');
+	const grC = document.getElementById('cel');
 	const unitLabel = document.getElementById('temperature');
 	const extraLabel = document.getElementById('extraTemp');
 	unitLabel.innerText = `${unit} °`;
 	extraLabel.innerText = `Feels like ${extraUnit}°c`;
-
+	grC.classList.add('border','border-success','rounded','bg-success');
+	grF.classList.remove('border','border-success','rounded','bg-success');
 }
 
 export {
