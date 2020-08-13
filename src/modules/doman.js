@@ -145,7 +145,6 @@ const displayCelcius = (unit,extraUnit) => {
 const assignButton = (id,method) => {
 	const btn = document.getElementById(id);
 	btn.onclick = method;
-	console.log("hi");
 } 
 
 const getData = (id) => {
