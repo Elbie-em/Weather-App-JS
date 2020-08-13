@@ -33,7 +33,15 @@ const displayWeatherInfo = async (data) => {
 	}
 }
 
+const loadData = async () => {
+	const city = Doman.getData('search-input')
+	let weatherData = await getWeatherData(city);
+    displayWeatherInfo(weatherData);
+}
+
+Doman.assignButton('btn-search',loadData);
 
 
-let weatherData = getWeatherData('Brussels');
-displayWeatherInfo(weatherData);
+
+
+
