@@ -14,18 +14,26 @@ const getWeatherData = async (location) => {
 	const apiKey = fetchApiKey();
 	const webUrl = fetchUrl(location,apiKey);
 
-	const response = await fetch(webUrl,{mode: 'cors'});
-	const weatherData = await response.json();
+	try{
+		const response = await fetch(webUrl,{mode: 'cors'});
+		const weatherData = await response.json();
+		return weatherData;
+	}catch(error){
+		console.log('Invalid')
+	}
 	
-	return weatherData;
 }
 
 const displayWeatherInfo = async (data) => {
-	let weatherData = await data;
-	Doman.displayData(weatherData);
+	try{
+		let weatherData = await data;
+		Doman.displayData(weatherData);
+	}catch(error){
+		console.log('Invalid');
+	}
 }
 
 
 
-let weatherData = getWeatherData('Mexico city');
+let weatherData = getWeatherData('Brussels');
 displayWeatherInfo(weatherData);
