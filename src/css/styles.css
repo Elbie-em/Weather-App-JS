@@ -1,6 +1,7 @@
 * {
   font-family: 'Open Sans Condensed', sans-serif;
 }
+
 html, body {
   background: linear-gradient(
     to bottom,
@@ -21,4 +22,31 @@ html, body {
 
 .hov:hover {
   cursor: pointer;
+  animation: zoom-unit;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+
+}
+
+.zoom-temp:hover {
+  cursor: pointer;
+  animation: zoom-t;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom-t {
+  0%{
+    font-size: 75px;
+  }100%{
+    font-size: 81px;
+  }
+}
+
+@keyframes zoom-unit {
+  0%{
+    font-size: 30px;
+  }100%{
+    font-size: 45px;
+  }
 }

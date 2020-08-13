@@ -14,7 +14,7 @@ const dataCard = (container,data) => {
 	tempInfo.className = 'd-flex flex-row justify-content-between';
 
 	const iconDiv = document.createElement('div');
-	iconDiv.className = 'p-3 w-25 pl-5 ml-3';
+	iconDiv.className = 'p-3 w-25 ml-3';
 	const icon = document.createElement('img');
 	icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 	iconDiv.appendChild(icon);
@@ -24,6 +24,7 @@ const dataCard = (container,data) => {
 	const tempNo = document.createElement('h1');
 	tempNo.id = 'temperature';
 	tempNo.style.fontSize = '75px';
+	tempNo.className = 'zoom-temp';
 	tempNo.innerText = `${data.main.temp} °`;
 	tempCont.appendChild(tempNo);
 
@@ -119,7 +120,7 @@ const displayFahrenhiet = (temp,extraTemp) => {
 	const unit = convertTemp(temp);
 	const extraUnit = convertTemp(extraTemp)
 	unitLabel.innerText = `${unit} °`;
-	extraLabel.innerText = `Feels like ${extraUnit}°c`;
+	extraLabel.innerText = `Feels like ${extraUnit}°F`;
 }
 
 const displayCelcius = (unit,extraUnit) => {
