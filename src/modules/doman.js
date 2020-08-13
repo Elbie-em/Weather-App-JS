@@ -20,13 +20,25 @@ const dataCard = (container,data) => {
 	const tempCont = document.createElement('div');
 	tempCont.className = 'p-3'
 	const tempNo = document.createElement('h1');
+	tempNo.id = 'temperature';
 	tempNo.style.fontSize = '75px';
 	tempNo.innerText = `${data.main.temp} °`;
 	tempCont.appendChild(tempNo);
 
 	const unitCont = document.createElement('div');
-	unitCont.className = 'p-3 w-25 text-left d-flex align-items-center';
-	unitCont.innerHTML = 'C <br> F';
+	unitCont.className = 'p-3 w-25 text-left';
+	const celcius = document.createElement('h5');
+	celcius.className = 'mt-3 hov';
+	celcius.innerText = 'C';
+	celcius.onclick = () => { displayCelcius(data.main.temp,data.main.feels_like);}
+
+	const fahrenheit = document.createElement('h5');
+	fahrenheit.className = 'mt-3 hov';
+	fahrenheit.innerText = 'F';
+	fahrenheit.onclick = () => { displayFahrenhiet(data.main.temp,data.main.feels_like);}
+
+	unitCont.appendChild(celcius);
+	unitCont.appendChild(fahrenheit)
 
 	tempInfo.appendChild(icon);
 	tempInfo.appendChild(tempCont);
@@ -41,6 +53,7 @@ const dataCard = (container,data) => {
 
 	const extraOne = document.createElement('div');
 	extraOne.className = 'w-50 text-right';
+	extraOne.id = 'extraTemp';
 	extraOne.innerText = `Feels like ${data.main.feels_like}°c`;
 
 	const extraTwo = document.createElement('div');
@@ -90,6 +103,29 @@ const convertTime = (unixTimeStamp) => {
 	}
 	let cDate = `${date.getHours()}:${minutes}`;
 	return cDate;
+}
+
+const convertTemp = (temp) => {
+	const unit = (temp * (9/5)) + 32
+	const conversion = Math.round(unit * 10) / 10
+	return conversion
+}
+
+const displayFahrenhiet = (temp,extraTemp) => {
+	const unitLabel = document.getElementById('temperature');
+	const extraLabel = document.getElementById('extraTemp');
+	const unit = convertTemp(temp);
+	const extraUnit = convertTemp(extraTemp)
+	unitLabel.innerText = `${unit} °`;
+	extraLabel.innerText = `Feels like ${extraUnit}°c`;
+}
+
+const displayCelcius = (unit,extraUnit) => {
+	const unitLabel = document.getElementById('temperature');
+	const extraLabel = document.getElementById('extraTemp');
+	unitLabel.innerText = `${unit} °`;
+	extraLabel.innerText = `Feels like ${extraUnit}°c`;
+
 }
 
 export {

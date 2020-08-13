@@ -18,3 +18,7 @@ html, body {
 .op-level {
   opacity: 0.8;
 }
+
+.hov:hover {
+  cursor: pointer;
+}
