@@ -1,7 +1,7 @@
 const UI = () => {
 	const container = document.getElementById('content');
 	const dataContainer = document.createElement('div');
-	dataContainer.className = 'w-75 mx-auto text-center mt-3 border d-flex flex-column text-white'
+	dataContainer.className = 'w-75 mx-auto text-center mt-3 border rounded d-flex flex-column text-white'
 
 	return {container,dataContainer}
 }
@@ -13,9 +13,11 @@ const dataCard = (container,data) => {
 	const tempInfo = document.createElement('div');
 	tempInfo.className = 'd-flex flex-row justify-content-between';
 
-	const icon = document.createElement('div');
-	icon.className = 'p-3 w-25';
-	icon.innerHTML = '<i class="fas fa-cloud fa-3x mt-3"></i>';
+	const iconDiv = document.createElement('div');
+	iconDiv.className = 'p-3 w-25 pl-5 ml-3';
+	const icon = document.createElement('img');
+	icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+	iconDiv.appendChild(icon);
 
 	const tempCont = document.createElement('div');
 	tempCont.className = 'p-3'
@@ -40,7 +42,7 @@ const dataCard = (container,data) => {
 	unitCont.appendChild(celcius);
 	unitCont.appendChild(fahrenheit)
 
-	tempInfo.appendChild(icon);
+	tempInfo.appendChild(iconDiv);
 	tempInfo.appendChild(tempCont);
 	tempInfo.appendChild(unitCont);
 
