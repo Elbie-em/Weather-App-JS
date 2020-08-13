@@ -45,11 +45,11 @@ const dataCard = (container,data) => {
 
 	const extraTwo = document.createElement('div');
 	extraTwo.className = 'w-50 text-center';
-	extraTwo.innerHTML = `Wind <i class="fas fa-wind"></i> ${data.wind.speed} mph`;
+	extraTwo.innerHTML = `Wind ${data.wind.speed} mph`;
 
 	const extraThree = document.createElement('div');
 	extraThree.className = 'w-50 text-left';
-	extraThree.innerHTML = `Humidity <i class="fas fa-temperature-low"></i> ${data.main.humidity}%`;
+	extraThree.innerHTML = `Humidity ${data.main.humidity}%`;
 
 	tempExtras.appendChild(extraOne);
 	tempExtras.appendChild(extraTwo);
@@ -60,11 +60,11 @@ const dataCard = (container,data) => {
 
 	const sRise = document.createElement('div');
 	sRise.className = 'w-50 text-right p-3';
-	sRise.innerText = `Sunrise 05:00`;
+	sRise.innerText = `Sunrise  ${convertTime(data.sys.sunrise)}`;
 
 	const sSet = document.createElement('div');
 	sSet.className = 'w-50 text-left p-3';
-	sSet.innerHTML = `Sunset 19:00`;
+	sSet.innerHTML = `Sunset ${convertTime(data.sys.sunset)}`;
 
 	sunInfo.appendChild(sRise);
 	sunInfo.appendChild(sSet);
@@ -80,6 +80,16 @@ const displayData = (data) => {
 	const ui = UI();
 	dataCard(ui.dataContainer,data);
 	ui.container.appendChild(ui.dataContainer);
+}
+
+const convertTime = (unixTimeStamp) => {
+	let date = new Date(unixTimeStamp * 1000);
+	let minutes = date.getMinutes();
+	if (minutes < 10){
+		minutes = `0${minutes}`;
+	}
+	let cDate = `${date.getHours()}:${minutes}`;
+	return cDate;
 }
 
 export {
