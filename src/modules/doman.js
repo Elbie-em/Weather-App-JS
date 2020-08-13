@@ -97,6 +97,7 @@ const dataCard = (container,data) => {
 
 const displayData = (data) => {
 	const ui = UI();
+	ui.container.innerHTML = '';
 	dataCard(ui.dataContainer,data);
 	ui.container.appendChild(ui.dataContainer);
 }
@@ -141,6 +142,17 @@ const displayCelcius = (unit,extraUnit) => {
 	grF.classList.remove('border','border-success','rounded','bg-success');
 }
 
+const assignButton = (id,method) => {
+	const btn = document.getElementById(id);
+	btn.onclick = method;
+	console.log("hi");
+} 
+
+const getData = (id) => {
+	const input = document.getElementById(id);
+	return input.value;
+}
+
 export {
-	displayData
+	displayData,assignButton,getData
 }
