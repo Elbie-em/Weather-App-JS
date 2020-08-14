@@ -178,7 +178,7 @@ const changeBg = (condition) => {
 const errorCard = (container) => {
 	const icon = document.createElement('img');
 	icon.className = 'danger-icon m-3 mx-auto';
-	icon.src = 'https://media0.giphy.com/media/MdYZCaIZqjJZuWOfGs/giphy.gif';
+	icon.src = '../src/assets/images/error.gif';
 
 	const msg = document.createElement('h4');
 	msg.className = 'text-danger font-weight-bolder';
@@ -186,7 +186,7 @@ const errorCard = (container) => {
 
 	const msgE = document.createElement('h6');
 	msgE.className = 'text-danger';
-	msgE.innerText = 'It seems that there was an error processing your request, enter a valid city in the search bar to see results.';
+	msgE.innerHTML = 'It seems that there was an error processing your request:<br> ---enter a valid city in the search bar to see results<br> ---enable your location <br>---check your internet connection';
 
 	container.appendChild(icon);
 	container.appendChild(msg);
