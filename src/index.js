@@ -29,7 +29,7 @@ const displayWeatherInfo = async (data) => {
 		let weatherData = await data;
 		Doman.displayData(weatherData);
 	} catch (error) {
-		console.log('Invalid');
+		Doman.showError();
 	}
 }
 
@@ -67,9 +67,12 @@ const error = () => {
 	alert('Unable to retrieve your Location');
 }
 
-if (!navigator.geolocation) {
-	alert('Geolocation is not supported by your browser');
-} else {
-	navigator.geolocation.getCurrentPosition(success, error);
+const onLoad = () => {
+	if (!navigator.geolocation) {
+		alert('Geolocation is not supported by your browser');
+	} else {
+		navigator.geolocation.getCurrentPosition(success, error);
+	}
 }
 
+onLoad();
