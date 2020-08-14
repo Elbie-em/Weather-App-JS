@@ -52,6 +52,11 @@ nav {
   animation-fill-mode: forwards;
 }
 
+.danger-icon {
+  height: 150px;
+  width: 150px;
+}
+
 .credits {
   position: fixed;
   bottom: 0;
