@@ -1,7 +1,5 @@
 const UI = () => {
 	const container = document.getElementById('content');	
-	container.style.positon = 'fixed';
-	container.style.zIndex =1;
 	const dataContainer = document.createElement('div');
 	dataContainer.className = 'w-75 mx-auto text-center mt-3 border rounded d-flex flex-column text-white'
 
