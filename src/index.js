@@ -37,6 +37,7 @@ const loadInputData = async () => {
 	const city = Doman.getData('search-input')
 	let weatherData = await getWeatherData(city);
 	displayWeatherInfo(weatherData);
+	Doman.changeBg(weatherData.weather[0].main);
 }
 
 Doman.assignButton('btn-search', loadInputData);
