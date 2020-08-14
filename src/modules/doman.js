@@ -1,5 +1,7 @@
 const UI = () => {
-	const container = document.getElementById('content');
+	const container = document.getElementById('content');	
+	container.style.positon = 'fixed';
+	container.style.zIndex =1;
 	const dataContainer = document.createElement('div');
 	dataContainer.className = 'w-75 mx-auto text-center mt-3 border rounded d-flex flex-column text-white'
 
@@ -152,6 +154,29 @@ const getData = (id) => {
 	return input.value;
 }
 
+const changeBg = (condition) => {
+	const vid = document.getElementById('bg-vid');
+	switch (condition) {
+		case "Thunderstorm":
+	    case "Drizzle":
+		case "Rain":
+			vid.src = '../src/assets/videos/rain.mp4';
+			break;
+		case "Snow":
+			vid.src = '../src/assets/videos/snow.mp4';
+			break;
+		case "Clear":
+			vid.src = '../src/assets/videos/clearsky.mp4';
+			break;
+		case "Clouds":
+			vid.src = '../src/assets/videos/clouds.mp4';
+			break;
+		default:
+			vid.src = '../src/assets/videos/vars.mp4';
+			break;
+	}
+}
+
 export {
-	displayData,assignButton,getData
+	displayData,assignButton,getData,changeBg
 }
