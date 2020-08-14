@@ -173,8 +173,38 @@ const changeBg = (condition) => {
 			vid.src = '../src/assets/videos/vars.mp4';
 			break;
 	}
+} 
+
+const errorCard = (container) => {
+	const icon = document.createElement('img');
+	icon.className = 'danger-icon m-3 mx-auto';
+	icon.src = 'https://media0.giphy.com/media/MdYZCaIZqjJZuWOfGs/giphy.gif';
+
+	const msg = document.createElement('h4');
+	msg.className = 'text-danger font-weight-bolder';
+	msg.innerText = 'OOPS! Something went wrong';
+
+	const msgE = document.createElement('h6');
+	msgE.className = 'text-danger';
+	msgE.innerText = 'It seems that there was an error processing your request, enter a valid city in the search bar to see results.';
+
+	container.appendChild(icon);
+	container.appendChild(msg);
+	container.appendChild(msgE);
+
+}
+
+const displayErrorCard = () => {
+	const uiError = UI();
+	uiError.container.innerHTML = '';
+	errorCard(uiError.dataContainer);
+	uiError.container.appendChild(uiError.dataContainer);
+}
+
+const showError = () => {
+	displayErrorCard();
 }
 
 export {
-	displayData,assignButton,getData,changeBg
+	displayData,assignButton,getData,changeBg,showError
 }
