@@ -205,6 +205,14 @@ const showError = () => {
 	displayErrorCard();
 }
 
+const showLoader = () => {
+	$('#loading-info').show();
+}
+
+const hideLoader = () => {
+	$('#loading-info').hide();
+}
+
 export {
-	displayData,assignButton,getData,changeBg,showError
+	displayData,assignButton,getData,changeBg,showError,showLoader,hideLoader
 }
