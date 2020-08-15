@@ -64,6 +64,11 @@ nav {
   width: 100%;
 }
 
+.loader {
+  width: 100px;
+  height: 100px;
+}
+
 @keyframes zoom-t {
   0%{
     font-size: 75px;
