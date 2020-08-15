@@ -21,6 +21,8 @@ const displayWeatherInfo = async (data) => {
 		Doman.displayData(weatherData);
 	} catch (error) {
 		Doman.showError();
+	}finally{
+		Doman.hideLoader();
 	}
 }
 
