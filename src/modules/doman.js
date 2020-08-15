@@ -206,7 +206,24 @@ const showError = () => {
 }
 
 const showLoader = () => {
-	$('#loading-info').show();
+	const uiLoader = UI();
+	uiLoader.container.innerHTML = '';
+	const loaderDiv = document.createElement('div');
+    loaderDiv.id = 'loading-info';
+    
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner-grow text-secondary loader';
+    spinner.setAttribute("role","status");
+
+    const loaderText = document.createElement('h3');
+
+    loaderText.innerText = 'Loading Weather Data...';
+
+    loaderDiv.appendChild(spinner);
+    loaderDiv.appendChild(loaderText)
+
+    uiLoader.container.appendChild(loaderDiv);
+	
 }
 
 const hideLoader = () => {
