@@ -21,10 +21,12 @@ const success = async (position) => {
 	const longitude = position.coords.longitude;
 	const currentLocationWeatherData = await getCurrentPosition(latitude, longitude);
 	let weatherData = await WEP.getWeatherData(currentLocationWeatherData.name);
+	Doman.hideLoader();
 	WEP.displayWeatherInfo(weatherData);
 }
 
 const error = () => {
+	Doman.hideLoader();
 	Doman.showError();
 }
 
