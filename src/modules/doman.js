@@ -1,3 +1,5 @@
+import * as DP from './dataProcessor'
+
 const UI = () => {
 	const container = document.getElementById('content');	
 	const dataContainer = document.createElement('div');
@@ -79,11 +81,11 @@ const dataCard = (container,data) => {
 
 	const sRise = document.createElement('div');
 	sRise.className = 'w-50 text-right p-3';
-	sRise.innerText = `Sunrise  ${convertTime(data.sys.sunrise)}`;
+	sRise.innerText = `Sunrise  ${DP.convertTime(data.sys.sunrise)}`;
 
 	const sSet = document.createElement('div');
 	sSet.className = 'w-50 text-left p-3';
-	sSet.innerHTML = `Sunset ${convertTime(data.sys.sunset)}`;
+	sSet.innerHTML = `Sunset ${DP.convertTime(data.sys.sunset)}`;
 
 	sunInfo.appendChild(sRise);
 	sunInfo.appendChild(sSet);
@@ -102,29 +104,13 @@ const displayData = (data) => {
 	ui.container.appendChild(ui.dataContainer);
 }
 
-const convertTime = (unixTimeStamp) => {
-	let date = new Date(unixTimeStamp * 1000);
-	let minutes = date.getMinutes();
-	if (minutes < 10){
-		minutes = `0${minutes}`;
-	}
-	let cDate = `${date.getHours()}:${minutes}`;
-	return cDate;
-}
-
-const convertTemp = (temp) => {
-	const unit = (temp * (9/5)) + 32
-	const conversion = Math.round(unit * 10) / 10
-	return conversion
-}
-
 const displayFahrenhiet = (temp,extraTemp) => {
 	const grF = document.getElementById('fah');
 	const grC = document.getElementById('cel');
 	const unitLabel = document.getElementById('temperature');
 	const extraLabel = document.getElementById('extraTemp');
-	const unit = convertTemp(temp);
-	const extraUnit = convertTemp(extraTemp)
+	const unit = DP.convertTemp(temp);
+	const extraUnit = DP.convertTemp(extraTemp)
 	unitLabel.innerText = `${unit} °`;
 	extraLabel.innerText = `Feels like ${extraUnit}°F`;
 	grF.classList.add('border','border-success','rounded','bg-success');
