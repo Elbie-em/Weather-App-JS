@@ -5,7 +5,7 @@ import * as Doman from './doman';
 
 const getCurrentPosition = async (lat, lng) => {
 	const apiKey = API.fetchApiKey();
-	let webUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&APPID=${apiKey}`;
+	let webUrl = API.fetchUrlLoc(lat,lng,apiKey);
 	
 	try {
 		const response = await fetch(webUrl, { mode: 'cors' });
@@ -17,12 +17,18 @@ const getCurrentPosition = async (lat, lng) => {
 }
 
 const success = async (position) => {
-	const latitude = position.coords.latitude;
-	const longitude = position.coords.longitude;
-	const currentLocationWeatherData = await getCurrentPosition(latitude, longitude);
-	let weatherData = await WEP.getWeatherData(currentLocationWeatherData.name);
-	Doman.hideLoader();
-	WEP.displayWeatherInfo(weatherData);
+	try {
+		const latitude = position.coords.latitude;
+		const longitude = position.coords.longitude;
+		const currentLocationWeatherData = await getCurrentPosition(latitude, longitude);
+		let weatherData = await WEP.getWeatherData(currentLocationWeatherData.name);
+		WEP.displayWeatherInfo(weatherData);
+		Doman.changeBg(weatherData.weather[0].main);
+	}catch(error){
+		Doman.showError();
+	}finally{
+		Doman.hideLoader();
+	}
 }
 
 const error = () => {
