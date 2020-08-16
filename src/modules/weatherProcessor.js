@@ -3,14 +3,14 @@ import * as Doman from './doman';
 
 const getWeatherData = async (location) => {
 	const apiKey = API.fetchApiKey();
-	const webUrl = API.fetchUrl(location, apiKey);
+	const webUrl = API.fetchUrlDef(location, apiKey);
 
 	try {
 		const response = await fetch(webUrl, { mode: 'cors' });
 		const weatherData = await response.json();
 		return weatherData;
 	} catch (error) {
-		console.log('Invalid')
+		Doman.showError();
 	}
 
 }
