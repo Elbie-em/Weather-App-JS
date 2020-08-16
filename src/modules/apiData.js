@@ -3,9 +3,14 @@ const fetchApiKey = () => {
 	return apiKey;
 }
 
-const fetchUrl = (location, apiKey) => {
+const fetchUrlDef = (location, apiKey) => {
 	let webUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${apiKey}`;
 	return webUrl;
 }
 
-export {fetchApiKey,fetchUrl};
+const fetchUrlLoc = (latitude,longitude,apiKey) => {
+	let webUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${apiKey}`;
+	return webUrl;
+}
+
+export {fetchApiKey,fetchUrlDef,fetchUrlLoc};
