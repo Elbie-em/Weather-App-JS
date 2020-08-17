@@ -4,12 +4,12 @@ const fetchApiKey = () => {
 }
 
 const fetchUrlDef = (location, apiKey) => {
-	let webUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${apiKey}`;
+	let webUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${apiKey}`;
 	return webUrl;
 }
 
 const fetchUrlLoc = (latitude,longitude,apiKey) => {
-	let webUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${apiKey}`;
+	let webUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${apiKey}`;
 	return webUrl;
 }
 
