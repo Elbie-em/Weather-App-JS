@@ -1,12 +1,6 @@
 import * as DP from './dataProcessor'
 import '../css/styles.css';
-import Rain from '../assets/videos/rain.mp4';
-import Snow from '../assets/videos/snow.mp4';
-import Clear from '../assets/videos/clearsky.mp4';
-import Clouds from '../assets/videos/clouds.mp4';
-import Vars from '../assets/videos/vars.mp4';
-import ErrorImg from '../assets/images/error.gif';
-
+import assets from './assetManager'
 const UI = () => {
 	const container = document.getElementById('content');	
 	const dataContainer = document.createElement('div');
@@ -151,19 +145,19 @@ const changeBg = (condition) => {
 		case "Thunderstorm":
 	    case "Drizzle":
 		case "Rain":
-			vid.src = Rain;
+			vid.src = assets.rain;
 			break;
 		case "Snow":
-			vid.src = Snow;
+			vid.src = assets.snow;
 			break;
 		case "Clear":
-			vid.src = Clear;
+			vid.src = assets.clear;
 			break;
 		case "Clouds":
-			vid.src = Clouds;
+			vid.src = assets.clouds;
 			break;
 		default:
-			vid.src = Vars;
+			vid.src = assets.vars;
 			break;
 	}
 } 
@@ -171,7 +165,7 @@ const changeBg = (condition) => {
 const errorCard = (container) => {
 	const icon = document.createElement('img');
 	icon.className = 'danger-icon m-3 mx-auto';
-	icon.src = ErrorImg;
+	icon.src = assets.errorImg;
 
 	const msg = document.createElement('h4');
 	msg.className = 'text-danger font-weight-bolder';
