@@ -1,5 +1,5 @@
 import * as DP from './dataProcessor'
-
+import '../css/styles.css';
 const UI = () => {
 	const container = document.getElementById('content');	
 	const dataContainer = document.createElement('div');
