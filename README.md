@@ -6,7 +6,8 @@ Building a weather forecast site using the openweathermap.org web api.
 > Click [here](https://weather365-e1cd5.web.app/) for live demo
 
 # Screenshot
-![screenshot](./public/src/assets/images/screenshot.png')
+![screenshot](public/src/assets/images/screenshot.png)
+
 
 ## Built With
 - HTML & CSS
@@ -31,8 +32,8 @@ Building a weather forecast site using the openweathermap.org web api.
 
 ### Prerequisite
 
-- Create an Open weather [account]https://home.openweathermap.org/users/sign_up)
-- Generate an API KEY when you log in[API KEY Generator](https://home.openweathermap.org/api_keys)
+- *Create an Open weather [account]https://home.openweathermap.org/users/sign_up)*
+- *Generate an API KEY [API_KEY Generator](https://home.openweathermap.org/api_keys)*
 
 ### Steps
 
