@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>weather.app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>weather365.app</title>
+
+  <script defer src="/__/firebase/7.18.0/firebase-app.js"></script>
+  <script defer src="/__/firebase/7.18.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/7.18.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/7.18.0/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/7.18.0/firebase-storage.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kenia&family=Open+Sans+Condensed:wght@300&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Open+Sans+Condensed:wght@300&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../src/css/styles.css">
   <!---SCRIPTS-->
@@ -24,12 +31,13 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
   <script defer src="main.js"></script>
+
 </head>
 
 <body>
   <nav class="navbar navbar-light bg-dark d-flex flex-row justify-content-between op-level">
     <div>
-      <a class="navbar-brand text-white nav-font" href="#">Weather Forcast</a>
+      <a class="navbar-brand text-white nav-font" href="#">Weather Forcast 365</a>
     </div>
 
     <div class="input-group w-25">
@@ -44,8 +52,8 @@
     <source src="../src/assets/videos/rain.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
-  <div class='text-center'id="content">
-  
+  <div class='text-center' id="content">
+
   </div>
   <div class="credits text-white text-right p-3">
     <span>Developed By: Elbie Moonga</span>

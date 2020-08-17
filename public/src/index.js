@@ -1,6 +1,6 @@
 import * as Doman from './modules/doman';
 import * as Loc from './modules/locationProcessor';
-import * as WEP from '../src/modules/weatherProcessor';
+import * as WEP from './modules/weatherProcessor';
 
 const loadInputData = async () => {
 	Doman.showLoader();
