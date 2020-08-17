@@ -1,5 +1,12 @@
 import * as DP from './dataProcessor'
 import '../css/styles.css';
+import Rain from '../assets/videos/rain.mp4';
+import Snow from '../assets/videos/snow.mp4';
+import Clear from '../assets/videos/clearsky.mp4';
+import Clouds from '../assets/videos/clouds.mp4';
+import Vars from '../assets/videos/vars.mp4';
+import ErrorImg from '../assets/images/error.gif';
+
 const UI = () => {
 	const container = document.getElementById('content');	
 	const dataContainer = document.createElement('div');
@@ -144,19 +151,19 @@ const changeBg = (condition) => {
 		case "Thunderstorm":
 	    case "Drizzle":
 		case "Rain":
-			vid.src = '../src/assets/videos/rain.mp4';
+			vid.src = Rain;
 			break;
 		case "Snow":
-			vid.src = '../src/assets/videos/snow.mp4';
+			vid.src = Snow;
 			break;
 		case "Clear":
-			vid.src = '../src/assets/videos/clearsky.mp4';
+			vid.src = Clear;
 			break;
 		case "Clouds":
-			vid.src = '../src/assets/videos/clouds.mp4';
+			vid.src = Clouds;
 			break;
 		default:
-			vid.src = '../src/assets/videos/vars.mp4';
+			vid.src = Vars;
 			break;
 	}
 } 
@@ -164,7 +171,7 @@ const changeBg = (condition) => {
 const errorCard = (container) => {
 	const icon = document.createElement('img');
 	icon.className = 'danger-icon m-3 mx-auto';
-	icon.src = '../src/assets/images/error.gif';
+	icon.src = ErrorImg;
 
 	const msg = document.createElement('h4');
 	msg.className = 'text-danger font-weight-bolder';
