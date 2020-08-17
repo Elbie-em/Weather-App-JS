@@ -12,11 +12,11 @@
   padding: 20px;
 }
 
-.w-vid{
+.w-vid {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
 }
 
@@ -42,7 +42,6 @@ nav {
   animation: zoom-unit;
   animation-duration: 400ms;
   animation-fill-mode: forwards;
-
 }
 
 .zoom-temp:hover {
@@ -70,17 +69,21 @@ nav {
 }
 
 @keyframes zoom-t {
-  0%{
+  0% {
     font-size: 75px;
-  }100%{
+  }
+
+  100% {
     font-size: 81px;
   }
 }
 
 @keyframes zoom-unit {
-  0%{
+  0% {
     font-size: 30px;
-  }100%{
+  }
+
+  100% {
     font-size: 45px;
   }
 }

@@ -6,12 +6,12 @@ import Vars from '../assets/videos/vars.mp4';
 import ErrorImg from '../assets/images/error.gif';
 
 const Assets = {
-    rain: Rain,
-    snow: Snow,
-    clear: Clear,
-    clouds: Clouds,
-    vars:Vars,
-    errorImg:ErrorImg
+  rain: Rain,
+  snow: Snow,
+  clear: Clear,
+  clouds: Clouds,
+  vars: Vars,
+  errorImg: ErrorImg,
 };
 
-export default Assets 
+export default Assets;

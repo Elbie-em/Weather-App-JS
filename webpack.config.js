@@ -8,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public/dist'),
   },
   plugins: [
-    new Dotenv()
+    new Dotenv(),
   ],
   module: {
     rules: [
