@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "Weather app with data from open weather api",
   "main": "index.js",
+  "engines": {
+    "npm": "6.x",
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
