@@ -30,9 +30,9 @@ Building a weather forecast site using the openweathermap.org web api.
 
 ## Installation
 
-### Prerequisite
+### Prerequisites
 
-- *Create an Open weather [account]https://home.openweathermap.org/users/sign_up)*
+- *Create an Open weather [account](https://home.openweathermap.org/users/sign_up)*
 - *Generate an API KEY [API_KEY Generator](https://home.openweathermap.org/api_keys)*
 
 ### Steps
