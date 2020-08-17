@@ -10,4 +10,15 @@ module.exports = {
   plugins: [
     new Dotenv()
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+    ],
+  },
 };
