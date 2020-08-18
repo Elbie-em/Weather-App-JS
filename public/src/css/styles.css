@@ -1,0 +1,89 @@
+* {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  height: 91.5%;
+  padding: 20px;
+}
+
+.w-vid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.nav-font {
+  font-family: 'Kenia', cursive;
+}
+
+nav {
+  z-index: 1;
+}
+
+.op-level {
+  opacity: 0.8;
+}
+
+.hov {
+  font-size: 30px;
+  padding: 5px;
+}
+
+.hov:hover {
+  cursor: pointer;
+  animation: zoom-unit;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+
+.zoom-temp:hover {
+  cursor: pointer;
+  animation: zoom-t;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+
+.danger-icon {
+  height: 150px;
+  width: 150px;
+}
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes zoom-t {
+  0% {
+    font-size: 75px;
+  }
+
+  100% {
+    font-size: 81px;
+  }
+}
+
+@keyframes zoom-unit {
+  0% {
+    font-size: 30px;
+  }
+
+  100% {
+    font-size: 45px;
+  }
+}
