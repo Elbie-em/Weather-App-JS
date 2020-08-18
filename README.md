@@ -85,9 +85,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse
-- The Odin Project
-- Open Weather API
+- [Microverse](microverse.org)
+- [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/weather-app?ref=lnav)
+- [Open Weather API](openweathermap.org)
 
 ## 📝 License
 
