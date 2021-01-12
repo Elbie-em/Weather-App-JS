@@ -1,2 +1,8 @@
 node_modules/
+<<<<<<< HEAD
 .env
+=======
+.env
+firebase-debug.log
+.firebase
+>>>>>>> dfd258e1e5c3953ad127f46f413b7168163521ed
